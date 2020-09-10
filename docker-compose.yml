@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-nest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - 27017:27017
+    networks:
+      - nest-net
+    volumes:
+      - mongodb_data:/data/db
+volumes:
+  mongodb_data:
+    driver: local
+networks:
+  nest-net:
+
+    mongoimport --uri mongodb://root:admin@localhost:27017/Nest --authenticationDatabase=admin -c Zips --file=zips.json

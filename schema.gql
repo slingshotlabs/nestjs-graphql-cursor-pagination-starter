@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Zip {
+  id: String
+  city: String
+  loc: [Float!]
+  pop: Float
+  state: String
+}
+
+type PageData {
+  count: Float!
+  limit: Float!
+  offset: Float!
+}
+
+type ZipResponse {
+  page: ZipConnection!
+  pageData: PageData
+}
+
+type ZipConnection {
+  edges: [ZipEdge!]
+  pageInfo: ZipPageInfo
+}
+
+type ZipEdge {
+  cursor: String
+  node: Zip
+}
+
+type ZipPageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type Query {
+  getZips(
+    """Paginate before opaque cursor"""
+    before: String
+
+    """Paginate after opaque cursor"""
+    after: String
+
+    """Paginate first"""
+    first: Float
+
+    """Paginate last"""
+    last: Float
+  ): ZipResponse!
+}
