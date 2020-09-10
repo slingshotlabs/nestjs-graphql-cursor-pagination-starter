@@ -17,5 +17,3 @@ volumes:
     driver: local
 networks:
   nest-net:
-
-    mongoimport --uri mongodb://root:admin@localhost:27017/Nest --authenticationDatabase=admin -c Zips --file=zips.json
