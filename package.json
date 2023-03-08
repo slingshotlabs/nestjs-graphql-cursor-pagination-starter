@@ -25,7 +25,7 @@
     "@mikro-orm/mongodb": "^4.0.0-rc.8",
     "@mikro-orm/nestjs": "^4.0.0",
     "@nestjs/common": "^7.0.0",
-    "@nestjs/core": "^7.0.0",
+    "@nestjs/core": "^9.0.5",
     "@nestjs/graphql": "^7.6.0",
     "@nestjs/platform-express": "^7.0.0",
     "apollo-server-express": "^2.17.0",
